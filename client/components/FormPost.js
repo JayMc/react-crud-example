@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 export default React.createClass({
 	getInitialState: function(){
-		return {nameGiven: '', nameFamily: ''}
+		return {title: '', body: ''}
 	},
-	handleChangeNameGiven: function(e){
-		this.setState({nameGiven: e.target.value})
+	handleChangeTitle: function(e){
+		this.setState({title: e.target.value})
 	},
-	handleChangeNameFamily: function(e){
-		this.setState({nameFamily: e.target.value})
+	handleChangeBody: function(e){
+		this.setState({body: e.target.value})
 	},
 	handleSubmit: function(e) {
 		e.preventDefault()
@@ -19,12 +19,14 @@ export default React.createClass({
 			<form onSubmit={this.handleSubmit}>
 				<input type="text" 
 					placeholder="sdfsd"
-					value={this.nameGiven}
-					onChange={this.handleChangeNameGiven} />
-				<input type="text" 
+					value={this.title}
+					onChange={this.handleChangeTitle} />
+					
+				<textarea type="text" 
 					placeholder="sdfsd"
-					value={this.nameFamily}
-					onChange={this.handleChangeNameFamily} />
+					onChange={this.handleChangeBody} >
+					{this.body}
+				</textarea>
 				<button>Submit</button>
 			</form>
 		)

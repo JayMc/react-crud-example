@@ -27411,9 +27411,9 @@
 
 	var _ListPosts2 = _interopRequireDefault(_ListPosts);
 
-	var _FormEmployee = __webpack_require__(459);
+	var _FormPost = __webpack_require__(459);
 
-	var _FormEmployee2 = _interopRequireDefault(_FormEmployee);
+	var _FormPost2 = _interopRequireDefault(_FormPost);
 
 	var _isomorphicFetch = __webpack_require__(460);
 
@@ -27446,7 +27446,7 @@
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement(_FormEmployee2.default, null),
+				_react2.default.createElement(_FormPost2.default, null),
 				_react2.default.createElement(
 					'button',
 					{ onClick: this.handleRefreshButton },
@@ -27544,16 +27544,16 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-		displayName: 'FormEmployee',
+		displayName: 'FormPost',
 
 		getInitialState: function getInitialState() {
-			return { nameGiven: '', nameFamily: '' };
+			return { title: '', body: '' };
 		},
-		handleChangeNameGiven: function handleChangeNameGiven(e) {
-			this.setState({ nameGiven: e.target.value });
+		handleChangeTitle: function handleChangeTitle(e) {
+			this.setState({ title: e.target.value });
 		},
-		handleChangeNameFamily: function handleChangeNameFamily(e) {
-			this.setState({ nameFamily: e.target.value });
+		handleChangeBody: function handleChangeBody(e) {
+			this.setState({ body: e.target.value });
 		},
 		handleSubmit: function handleSubmit(e) {
 			e.preventDefault();
@@ -27565,12 +27565,15 @@
 				{ onSubmit: this.handleSubmit },
 				_react2.default.createElement('input', { type: 'text',
 					placeholder: 'sdfsd',
-					value: this.nameGiven,
-					onChange: this.handleChangeNameGiven }),
-				_react2.default.createElement('input', { type: 'text',
-					placeholder: 'sdfsd',
-					value: this.nameFamily,
-					onChange: this.handleChangeNameFamily }),
+					value: this.title,
+					onChange: this.handleChangeTitle }),
+				_react2.default.createElement(
+					'textarea',
+					{ type: 'text',
+						placeholder: 'sdfsd',
+						onChange: this.handleChangeBody },
+					this.body
+				),
 				_react2.default.createElement(
 					'button',
 					null,

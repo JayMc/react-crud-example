@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ListPosts from '../components/ListPosts'
-import FormEmployee from '../components/FormEmployee'
+import FormPost from '../components/FormPost'
 import fetch from 'isomorphic-fetch'
 
 export default React.createClass({
@@ -22,7 +22,7 @@ export default React.createClass({
 
 		return (
 			<div>
-				<FormEmployee />
+				<FormPost />
 				<button onClick={this.handleRefreshButton}>Refresh</button>
 				<ListPosts data={this.state.employees} />
 			</div>

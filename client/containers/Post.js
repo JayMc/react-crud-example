@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ListPosts from '../components/ListPosts'
 import FormPost from '../components/FormPost'
 import fetch from 'isomorphic-fetch'
+import {Router, Route, hashHistory} from 'react-router'
 
 export default React.createClass({
 	getInitialState() {

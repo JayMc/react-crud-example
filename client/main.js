@@ -1,9 +1,20 @@
 import 'babel-polyfill' // for es6 promise required for fetch
 import React from 'react'
 import { render } from 'react-dom'
-import Root from './containers/Root'
+import Post from './containers/Post'
+import Author from './containers/Author'
+import Layout from './containers/Layout'
+
+import ListPosts from './components/ListPosts'
+import FormPost from './components/FormPost'
+import {Router, Route, hashHistory} from 'react-router'
 
 render(
-  <Root />,
+	<Router history={hashHistory}>
+  		<Route path="/" component={Layout} >
+			<Route path="/posts" component={Post} />
+			<Route path="/authors" component={Author} />
+		</Route>
+	</Router>,
   document.getElementById('root')
 )

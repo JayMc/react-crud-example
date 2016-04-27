@@ -27411,14 +27411,16 @@
 
 	var _ListPosts2 = _interopRequireDefault(_ListPosts);
 
-	var _isomorphicFetch = __webpack_require__(459);
+	var _FormEmployee = __webpack_require__(459);
+
+	var _FormEmployee2 = _interopRequireDefault(_FormEmployee);
+
+	var _isomorphicFetch = __webpack_require__(460);
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// export default class Root extends Component {
-	// let Root = () => {
 	exports.default = _react2.default.createClass({
 		displayName: 'Root',
 		getInitialState: function getInitialState() {
@@ -27444,6 +27446,7 @@
 			return _react2.default.createElement(
 				'div',
 				null,
+				_react2.default.createElement(_FormEmployee2.default, null),
 				_react2.default.createElement(
 					'button',
 					{ onClick: this.handleRefreshButton },
@@ -27528,16 +27531,69 @@
 /* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+		displayName: 'FormEmployee',
+
+		getInitialState: function getInitialState() {
+			return { nameGiven: '', nameFamily: '' };
+		},
+		handleChangeNameGiven: function handleChangeNameGiven(e) {
+			this.setState({ nameGiven: e.target.value });
+		},
+		handleChangeNameFamily: function handleChangeNameFamily(e) {
+			this.setState({ nameFamily: e.target.value });
+		},
+		handleSubmit: function handleSubmit(e) {
+			e.preventDefault();
+			console.log(this.state);
+		},
+		render: function render() {
+			return _react2.default.createElement(
+				'form',
+				{ onSubmit: this.handleSubmit },
+				_react2.default.createElement('input', { type: 'text',
+					placeholder: 'sdfsd',
+					value: this.nameGiven,
+					onChange: this.handleChangeNameGiven }),
+				_react2.default.createElement('input', { type: 'text',
+					placeholder: 'sdfsd',
+					value: this.nameFamily,
+					onChange: this.handleChangeNameFamily }),
+				_react2.default.createElement(
+					'button',
+					null,
+					'Submit'
+				)
+			);
+		}
+	});
+
+/***/ },
+/* 460 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// the whatwg-fetch polyfill installs the fetch() function
 	// on the global object (window or self)
 	//
 	// Return that as the export for use in Webpack, Browserify etc.
-	__webpack_require__(460);
+	__webpack_require__(461);
 	module.exports = self.fetch.bind(self);
 
 
 /***/ },
-/* 460 */
+/* 461 */
 /***/ function(module, exports) {
 
 	(function(self) {

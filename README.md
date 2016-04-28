@@ -5,12 +5,13 @@ simple React Create Read Update Delete example
 * Post\Author CRUD
 * UI tests
 * unit tests
-* ~webpack~
-* ~webpack dev server~
-* ~react router~
+* ~~webpack~~
+* ~~webpack dev server~~
+* ~~react router~~
 * react router nested routes
 * redux
 * container for handing data
+* server rendered
 
 ## start dev server for auto reloading goodness
 ```

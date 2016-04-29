@@ -1,10 +1,13 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router'
 
 export default React.createClass({
 	render: function(){
 
 		return(
-			<li>{this.props.data.nameGiven}</li>
+			<li key={this.props.data.id} >
+				<Link to={"posts/post/"+this.props.data.id}>{this.props.data.nameGiven}</Link>
+			</li>
 			)
 	}
 })

@@ -6,24 +6,31 @@ import {Router, Route, hashHistory} from 'react-router'
 
 export default React.createClass({
 	getInitialState() {
-		return {employees: [{id: 1, nameGiven: 'nothing'}] }
+		return {employees: [{id: 1, nameGiven: 'Superman'},
+							{id: 2, nameGiven: 'Batman'},
+							{id: 3, nameGiven: 'Steve'}] }
 	},
 	componentDidMount() {
 		this.refresh()	
 	},
 	refresh() {
-		fetch('http://localhost:3000/employees')
-			.then(req => req.json())
-			.then(json => this.setState({employees: json}) )
+		// fetch('http://localhost:3000/employees')
+		// 	.then(req => req.json())
+		// 	.then(json => this.setState({employees: json}) )
 	},
 	handleRefreshButton(){
 		this.refresh()
 	},
 	render(){
-
+		let employees = this.state.employees
+		// console.log(employees)
+		const childrenWithProps = React.Children.map(this.props.children, function(child){
+			// console.log(employees)
+			return React.cloneElement(child, {employees: employees})
+		})
 		return (
 			<div>
-				<FormPost />
+				{childrenWithProps}
 				<button onClick={this.handleRefreshButton}>Refresh</button>
 				<ListPosts data={this.state.employees} />
 			</div>

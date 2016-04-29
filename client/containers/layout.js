@@ -9,8 +9,9 @@ export default React.createClass({
 				<h1>Header</h1>
 
 				<ul role="nav">
-		          <li><Link to="/posts">Posts</Link></li>
-		          <li><Link to="/authors">Authors</Link></li>
+		          <li><Link to="posts">Posts</Link></li>
+		          <li><Link to="posts/new">Posts new</Link></li>
+		          <li><Link to="authors">Authors</Link></li>
 		        </ul>
 
 				{this.props.children}

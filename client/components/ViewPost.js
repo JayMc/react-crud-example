@@ -3,7 +3,7 @@ import React from 'react';
 export default React.createClass({
 	render(){
 		self = this
-		let post = this.props.posts.filter(function(post){
+		let post = this.props.posts.filter( (post) => {
 			if(post.id == self.props.params.id) return post
 		})[0]
 		console.log(post)

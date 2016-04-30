@@ -3,10 +3,9 @@ import ListItem from './ListItem'
 
 export default React.createClass({
 	render(){
-		self = this
-		const ListItems = this.props.data.map(function(item){
+		const ListItems = this.props.data.map( (item) => {
 			return (
-				<ListItem key={item.id} listItemPath={self.props.listItemPath} data={item} />
+				<ListItem key={item.id} listItemPath={this.props.listItemPath} data={item} />
 			)
 		})
 

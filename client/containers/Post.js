@@ -6,7 +6,7 @@ import {Router, Route, hashHistory} from 'react-router'
 
 export default React.createClass({
 	getInitialState() {
-		return {employees: [{id: 1, nameGiven: 'Superman'},
+		return {posts: [{id: 1, nameGiven: 'Superman'},
 							{id: 2, nameGiven: 'Batman'},
 							{id: 3, nameGiven: 'Steve'}] }
 	},
@@ -14,25 +14,25 @@ export default React.createClass({
 		this.refresh()	
 	},
 	refresh() {
-		// fetch('http://localhost:3000/employees')
+		// fetch('http://localhost:3000/posts')
 		// 	.then(req => req.json())
-		// 	.then(json => this.setState({employees: json}) )
+		// 	.then(json => this.setState({posts: json}) )
 	},
 	handleRefreshButton(){
 		this.refresh()
 	},
 	render(){
-		let employees = this.state.employees
-		// console.log(employees)
+		let posts = this.state.posts
+		// console.log(posts)
 		const childrenWithProps = React.Children.map(this.props.children, function(child){
-			// console.log(employees)
-			return React.cloneElement(child, {employees: employees})
+			// console.log(posts)
+			return React.cloneElement(child, {posts: posts})
 		})
 		return (
 			<div>
 				{childrenWithProps}
 				<button onClick={this.handleRefreshButton}>Refresh</button>
-				<ListPosts data={this.state.employees} />
+				<ListPosts data={this.state.posts} />
 			</div>
 		)
 		

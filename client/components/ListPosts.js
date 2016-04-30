@@ -6,17 +6,17 @@ export default React.createClass({
 	render: function(){
 		let data = this.props.data
 
-		let employeeNodes = data.map(function(employee){
+		let postNodes = data.map(function(post){
 			return (
 				<div >
-					<ListItemPost data={employee} />
+					<ListItemPost data={post} />
 				</div>
 			)	
 		})
 
 		return (
 			<ul>
-				{employeeNodes}
+				{postNodes}
 			</ul>
 		)
 	}

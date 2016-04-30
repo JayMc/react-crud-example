@@ -8,9 +8,7 @@ export default React.createClass({
 
 		let postNodes = data.map(function(post){
 			return (
-				<div >
-					<ListItemPost data={post} />
-				</div>
+				<ListItemPost key={post.id} data={post} />
 			)	
 		})
 

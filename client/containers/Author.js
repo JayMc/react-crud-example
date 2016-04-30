@@ -12,7 +12,6 @@ export default React.createClass({
 	    };
 	},
 	render(){
-		// this one uses a generic dumb list that we pass data into from this smart container
 		return(
 			<div>
 				<p>Author</p>

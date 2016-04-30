@@ -18,8 +18,8 @@ render(
 				<Route path="post/:id" component={ViewPost} /> /* display details of a single post */
 				<Route path="new" component={FormPost} /> /* form for creating a new post*/
 			</Route>
-			<Route path="authors" component={Authors} />
-			<Route path="author/:id" component={Author} />
+			<Route path="authors" component={Authors} /> /* individual container */
+			<Route path="author/:id" component={Author} /> /* individual container */
 		</Route>
 	</Router>,
   document.getElementById('root')

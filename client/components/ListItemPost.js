@@ -6,7 +6,7 @@ export default React.createClass({
 
 		return(
 			<li key={this.props.data.id} >
-				<Link to={"posts/post/"+this.props.data.id}>{this.props.data.nameGiven}</Link>
+				<Link to={"posts/post/"+this.props.data.id}>{this.props.data.title}</Link>
 			</li>
 			)
 	}

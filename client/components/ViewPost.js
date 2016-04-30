@@ -10,7 +10,7 @@ export default React.createClass({
 		return (
 			<div>
 				<h3>Post details</h3>
-				<p>{post.nameGiven}</p>
+				<p>{post.title}</p>
 			</div>
 		)
 	}

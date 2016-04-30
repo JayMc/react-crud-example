@@ -6,9 +6,9 @@ import {Router, Route, hashHistory} from 'react-router'
 
 export default React.createClass({
 	getInitialState() {
-		return {posts: [{id: 1, nameGiven: 'Superman'},
-							{id: 2, nameGiven: 'Batman'},
-							{id: 3, nameGiven: 'Steve'}] }
+		return {posts: [{id: 1, title: 'Clarks surprise', author_id: 1},
+							{id: 2, title: 'Batwing repair receipt', author_id: 2},
+							{id: 3, title: 'Digging holes in the scotland winter', author_id: 3}] }
 	},
 	componentDidMount() {
 		this.refresh()	

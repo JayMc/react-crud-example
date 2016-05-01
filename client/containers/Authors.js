@@ -4,6 +4,7 @@ import Count from '../components/Count';
 
 export default React.createClass({
   getInitialState() {
+    // pretend to get a list of authors
     return {
       authors: [
         { id: 1, name: 'Superman' },
@@ -24,7 +25,7 @@ export default React.createClass({
     return (
 			<div>
 				<p>Authors</p>
-				<List listItemPath="authors/author" data={this.state.authors} />
+				<List listItemPath="authors/view" data={this.state.authors} />
 				<Count total={this.totalAuthors()} />
 			</div>
 

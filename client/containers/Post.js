@@ -16,6 +16,11 @@ export default React.createClass({
     this.refresh();
   },
 
+  addPost(newPost) {
+    newPost.id = this.state.posts.length + 1;
+    this.setState({ posts: this.state.posts.concat(newPost) });
+  },
+
   refresh() {
     // fetch('http://localhost:3000/posts')
     // 	.then(req => req.json())
@@ -29,10 +34,9 @@ export default React.createClass({
   render() {
     let posts = this.state.posts;
 
-    // console.log(posts)
+    var _this = this;
     const childrenWithProps = React.Children.map(this.props.children, function (child) {
-      // console.log(posts)
-      return React.cloneElement(child, { posts: posts });
+      return React.cloneElement(child, { posts: posts, addPost: _this.addPost });
     });
 
     return (

@@ -15,7 +15,8 @@ export default React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
-    console.log(this.state);
+    this.props.addPost(this.state);
+
   },
 
   render() {

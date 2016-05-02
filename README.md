@@ -2,7 +2,7 @@
 simple React Create Read Update Delete example
 
 ## TODO:
-* Post\Author CRUD
+* Post/Author CRUD
 * UI tests
 * unit tests
 * ~~webpack~~
@@ -10,7 +10,7 @@ simple React Create Read Update Delete example
 * ~~react router~~
 * react router nested routes
 * redux
-* container for handing data
+* ~~container for handing data~~
 * server rendered
 
 ## start dev server for auto reloading goodness

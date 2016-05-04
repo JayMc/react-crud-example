@@ -21,19 +21,24 @@ export default React.createClass({
 
   render() {
     return (
-			<form onSubmit={this.handleSubmit}>
-				<input type="text"
-					placeholder="sdfsd"
-					value={this.title}
-					onChange={this.handleChangeTitle} />
-
-				<textarea type="text"
-					placeholder="sdfsd"
-					onChange={this.handleChangeBody} >
-					{this.body}
-				</textarea>
-				<button>Submit</button>
-			</form>
+      <div>
+        <h3>New post</h3>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text"
+            placeholder="sdfsd"
+            value={this.title}
+            placeholder="title"
+            onChange={this.handleChangeTitle} />
+          <br />
+          <textarea type="text"
+            placeholder="sdfsd"
+            placeholder="body"
+            onChange={this.handleChangeBody} >
+            {this.body}
+          </textarea>
+          <button>Submit</button>
+        </form>
+      </div>
 		);
   },
 });
